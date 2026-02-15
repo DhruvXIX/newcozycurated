@@ -1,0 +1,7 @@
+[00:00:00.816] Server  LOG     ✓ Ready in 587ms
+[00:00:01.359] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:02.488] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:14.298] Browser WARN    Image with src "/_next/static/media/insta.d367ff56.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:14.298] Browser WARN    Image with src "/_next/static/media/cozycuratedrsa_qr.40d010d5.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:13.227] Browser WARN    Image with src "https://lh3.googleusercontent.com/a/ACg8ocKGLCJgS0cz4kuy713wPe6hSslacNrp2H8rH3mD3FlHFcS8p7DT=s96-c" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:03:43.576] Server  LOG     ✓ Compiled in 256ms

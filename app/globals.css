@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+:root {
+  /* User Requested Primary: #EDE8D0 (Warm Beige) */
+  --primary-bg: #EDE8D0;
+
+  /* Complementary Secondary: Deep Warm Taupe for Gradient Depth */
+  --secondary-bg: #DCD6C8;
+
+  /* Contrast Accent: Vibrant Terracotta / Burnt Sienna */
+  --accent: #B05D35;
+  --accent-foreground: #FFFFFF;
+
+  /* Text: High Contrast Charcoal */
+  --foreground: #2A2622;
+  --muted-foreground: #5C554D;
+
+  /* Glass Variables */
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.7);
+  --glass-shadow: 0 8px 32px -4px rgba(85, 75, 65, 0.15);
+}
+
+@theme inline {
+  --color-background: var(--primary-bg);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted-foreground);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --animate-fade-in: fade-in 1s ease-out forwards;
+  --animate-slide-up: slide-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-scale-in: scale-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  --animate-slide-in-right: slide-in-right 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-slide-in-left: slide-in-left 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark Mode High Contrast Setup */
+    --primary-bg: #1A1816;
+    --secondary-bg: #12100E;
+
+    /* Text: Bright Warm White */
+    --foreground: #F5F2EB;
+    --muted-foreground: #A8A29D;
+
+    /* Accent: Slightly lighter Terracotta for dark mode visibility */
+    --accent: #D47A53;
+
+    /* Lighter, clearer glass for dark mode readability */
+    --glass-bg: rgba(40, 38, 36, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+body {
+  background: var(--primary-bg);
+  color: var(--foreground);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(to bottom right, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+  background-attachment: fixed;
+}
+
+/* Apple-style Glass Utility */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}

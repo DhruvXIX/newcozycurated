@@ -1,0 +1,23 @@
+{
+    "rules": {
+        "contacts": {
+            // Allow anyone (even unauthenticated) to write a NEW message (create only)
+            // !data.exists() -> Ensures the record doesn't already exist (prevents overwriting)
+            // newData.exists() -> Ensures the new data is not null (prevents deleting)
+            "$messageId": {
+                ".write": "!data.exists() && newData.exists()",
+                ".validate": "newData.hasChildren(['name', 'email', 'message'])"
+            },
+            // Do not allow public read access to contact messages (privacy)
+            ".read": false
+        },
+        "users": {
+            // Allow anyone to read profiles (for the community features)
+            ".read": true,
+            "$uid": {
+                // Users can only write to their specific node if their Auth UID matches
+                ".write": "auth != null && auth.uid === $uid"
+            }
+        }
+    }
+}
