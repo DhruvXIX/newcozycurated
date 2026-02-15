@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'export',
   images: {
+    unoptimized: true, // Required for static export
     remotePatterns: [
       {
         protocol: 'https',
@@ -13,6 +15,8 @@ const nextConfig: NextConfig = {
       }
     ],
   },
+  basePath: '/newcozycurated', // Replace with your actual repo name if different
+  assetPrefix: '/newcozycurated/', // Replace with your actual repo name if different
 };
 
 export default nextConfig;
